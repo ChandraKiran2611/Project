@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    * {
+    font-family: sans-serif; /* Change your font family */
+  }
+  
+  .content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+  
+  .content-table thead tr {
+    background-color:blue;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .content-table th,
+  .content-table td {
+    padding: 12px 15px;
+  }
+  
+  .content-table tbody tr {
+    background-color: #eae0e0;
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(161, 161, 171);
+  }
+  
+  
+
+  tr:hover{
+    background-color: red;
+  }
+  
+  label{
+    padding: 10px;
+    margin: 20px;
+  }
+  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="/" method="POST">
+<label for="year-selection">Choose a year:</label>
+<select name="year" id="year">
+  <option value="one">1</option>
+  <option value="two">2</option>
+  <option value="three">3</option>
+  <option value="four">4</option>
+</select>
+
+<label for="branch-selection">Choose a branch:</label>
+<select name="branch" id="branch">
+  <option value="cse">CSE</option>
+  <option value="ece">ECE</option>
+  <option value="eee">EEE</option>
+  <option value="mech">MECH</option>
+  <option value="civil">CIVIL</option>
+</select>
+
+<label for="sem-selection">Choose a sem:</label>
+<select name="sem" id="sem">
+  <option value="first">ONE</option>
+  <option value="second">TWO</option>
+</select>
+
+<label for="criteria-selection">Choose a criteria:</label>
+<select name="criteria" id="criteria">
+  <option value="60">abv-60%</option>
+  <option value=" T KAPU">abv-65%</option>
+  <option value="70">abv-70%</option>
+</select>
+<label for="criteria-selection">Choose a gender:</label>
+<select name="gender" id="gender">
+  <option value="male">MALE</option>
+  <option value="female">FEMALE</option>
+  <option value="undefined">UNDEFINED</option>
+</select>
+<input type='submit'>
+</form>
+    <table class="content-table">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Regd.No</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Branch</th>
+            <th>10th%</th>
+            <th>inter/diploma</th>
+            <th>B.tech%</th>
+            <th>Backlogs</th>
+            <th>Mobile</th>
+            <th>Email</th>
+          </tr>
+         </thead>
+         {% for row in table %}
+          <tr>
+
+              <td>{{row.0}}</td>
+              <td>{{row.1}}</td>
+              <td>{{row.2}}</td>
+              <td>{{row.3}}</td>
+              <td>{{row.4}}</td>
+              <td>{{row.5}}</td>
+              <td>{{row.6}}</td>
+              <td>{{row.7}}</td>
+              <td>{{row.8}}</td>
+              <td>{{row.9}}</td>
+              <td>{{row.10}}</td>
+
+          </tr>
+          {% endfor %}
+      </table>
+</body>
+</html>
